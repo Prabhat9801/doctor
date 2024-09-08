@@ -198,6 +198,31 @@ nav ul li a:hover {
     }
 }
 
+@media (max-width: 768px) {
+    .hero {
+        height: auto; /* Allow height to adjust based on content */
+        padding: 60px 20px; /* Adjust padding for mobile */
+        background-attachment: scroll; /* Change to scroll for better performance on mobile */
+    }
+
+    .hero h1 {
+        font-size: 28px; /* Further reduced font size */
+    }
+
+    .hero h2 {
+        font-size: 18px; /* Further reduced font size */
+    }
+
+    .hero p {
+        font-size: 12px; /* Further reduced font size */
+    }
+
+    .btn {
+        padding: 10px 20px; /* Adjusted button padding */
+        font-size: 14px; /* Adjusted font size */
+    }
+}
+
 /* Style for the services section */
 .services {
     text-align: center;
@@ -659,7 +684,20 @@ nav ul li a:hover {
     font-size: 14px;
 }
 
-
+@media (max-width: 768px) {
+    .services .service-list {
+       display: flex;
+    }
+    .my-services .services-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+    .course-packages .packages-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        display: flex;
+        justify-content: space-evenly;
+       
+    }
+}
 
 
 
