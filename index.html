@@ -14,11 +14,16 @@
     box-sizing: border-box;
     font-family: Arial, sans-serif;
 }
-    body{
-        width:100%;
-    }
-html{
+body {
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0%;
+    padding: 0%;
+}
+
+html {
     scroll-behavior: smooth;
+    
 }
 /* Style for the header */
 /* General Styles */
@@ -293,6 +298,34 @@ nav ul li a:hover {
     color: #555;
 }
 
+@media (max-width: 768px) {
+    /* Stack services vertically for mobile devices */
+    .service-list {
+        flex-direction: column;
+        align-items: center;
+    }
+    .service {
+        width: 90%; /* Make services take most of the width */
+        margin-bottom: 20px;
+    }
+
+    /* Adjust heading and text sizes for smaller screens */
+    .services h2 {
+        font-size: 24px;
+    }
+    .services .call {
+        font-size: 18px;
+    }
+    .services .description {
+        font-size: 14px;
+    }
+
+    .service-icon img {
+        width: 100%; /* Make the image responsive */
+        height: auto;
+    }
+}
+
 /* Style for the My Services section */
 .my-services {
     text-align: center;
@@ -344,6 +377,28 @@ nav ul li a:hover {
 .service-item:hover {
     transform: translateY(-10px);
     box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
+}
+@media (max-width: 480px) {
+    .my-services h2 {
+        font-size: 24px;
+    }
+
+    .my-services .services-description {
+        font-size: 14px;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .service-item img {
+        height: 180px;
+    }
+
+    .service-item p {
+        font-size: 12px;
+    }
 }
 
 /* Style for the Testimonial Section */
@@ -398,7 +453,39 @@ nav ul li a:hover {
     margin: 0;
 }
 
+@media (max-width: 768px) {
+    .testimonial-section {
+        padding: 40px 15px; /* Reduce padding on smaller screens */
+    }
 
+    .testimonial-section h2 {
+        font-size: 22px; /* Decrease font size for heading */
+    }
+
+    .testimonial-description {
+        font-size: 14px; /* Decrease font size for description */
+        max-width: 90%; /* Make description take up more width on small screens */
+        margin: 0 auto 20px; /* Adjust margin for spacing */
+    }
+
+    .testimonial-author {
+        flex-direction: column; /* Stack image and text vertically on mobile */
+        align-items: center;
+    }
+
+    .testimonial-author img {
+        margin-right: 0; /* Remove margin on the right side */
+        margin-bottom: 10px; /* Add space below the image */
+        width: 40px; /* Adjust image size for mobile */
+        height: 40px;
+    }
+
+    .testimonial-author p {
+        font-size: 13px; /* Adjust font size for the author name */
+    }
+
+    /* Adjust any other sections accordingly for mobile */
+}
 /* Style for the Course Packages Section */
 .course-packages {
     text-align: center;
@@ -467,6 +554,45 @@ nav ul li a:hover {
     transform: translateY(-10px);
     box-shadow: 0px 20px 30px rgba(0, 0, 0, 0.15);
 }
+
+/* Mobile responsiveness for course package section */
+@media (max-width: 768px) {
+    .course-package-section {
+        padding: 20px 15px; /* Adjust padding for smaller screens */
+    }
+
+    .course-card {
+        flex-direction: column; /* Stack the course cards vertically */
+        width: 100%; /* Make the card take up the full width */
+        margin-bottom: 20px; /* Add space between cards */
+    }
+
+    .course-card img {
+        width: 100%; /* Ensure the image takes full width */
+        height: auto; /* Maintain aspect ratio */
+    }
+
+    .course-card h3 {
+        font-size: 18px; /* Adjust heading size for mobile */
+        margin: 10px 0; /* Reduce margins */
+    }
+
+    .course-card p {
+        font-size: 14px; /* Adjust description text size */
+    }
+
+    .course-card button {
+        font-size: 14px; /* Adjust button text size */
+        padding: 10px 15px; /* Adjust padding for mobile-friendly buttons */
+    }
+
+    /* Ensure any grid or flexbox layout adapts for mobile */
+    .course-package-grid {
+        display: flex;
+        flex-direction: column; /* Stack cards vertically */
+    }
+}
+
 /* Appointment Section */
 .appointment-section {
     background-color: #28a745; /* Use a green background similar to the testimonial section */
@@ -502,6 +628,60 @@ nav ul li a:hover {
     background-color: #0056b3;
 }
 
+/* Mobile responsiveness for the Appointment section */
+@media (max-width: 768px) {
+    .appointment-section {
+        padding: 20px 15px; /* Adjust padding for smaller screens */
+    }
+
+    .appointment-container {
+        flex-direction: column; /* Stack appointment elements vertically */
+        align-items: center; /* Center content for mobile */
+        text-align: center; /* Center the text for better mobile readability */
+    }
+
+    .appointment-info {
+        width: 100%; /* Full width for text info */
+        margin-bottom: 20px; /* Add space between sections */
+    }
+
+    .appointment-info h2 {
+        font-size: 22px; /* Adjust heading size for mobile */
+    }
+
+    .appointment-info p {
+        font-size: 14px; /* Adjust paragraph size for readability */
+        line-height: 1.6; /* Increase line height for better readability */
+    }
+
+    .appointment-form {
+        width: 100%; /* Full width for the form on mobile */
+    }
+
+    .appointment-form input,
+    .appointment-form textarea {
+        width: 100%; /* Ensure inputs and textarea take full width */
+        margin-bottom: 15px; /* Space between form fields */
+        padding: 10px; /* Add padding for better touch interaction */
+        font-size: 14px; /* Adjust font size for mobile */
+    }
+
+    .appointment-form button {
+        width: 100%; /* Full-width button for mobile */
+        font-size: 16px; /* Adjust button text size */
+        padding: 12px 15px; /* Adjust padding for touch-friendly buttons */
+    }
+
+    .appointment-image {
+        width: 100%; /* Full width for image */
+        margin-bottom: 20px; /* Space below the image */
+    }
+
+    .appointment-image img {
+        width: 100%; /* Ensure the image takes full width */
+        height: auto; /* Maintain aspect ratio */
+    }
+}
 
 /* Meeting Section */
 .meeting-section {
@@ -541,6 +721,55 @@ nav ul li a:hover {
 
 .meeting-table td {
     color: #333;
+}
+/* Mobile responsiveness for meeting section */
+@media (max-width: 768px) {
+    .meeting-section {
+        padding: 20px 15px; /* Adjust padding for smaller screens */
+    }
+
+    .meeting-container {
+        flex-direction: column; /* Stack meeting details vertically */
+        align-items: center; /* Center the content */
+        text-align: center; /* Align text to center for better appearance */
+    }
+
+    .meeting-info {
+        width: 100%; /* Full width on mobile */
+        margin-bottom: 20px; /* Add space below the section */
+    }
+
+    .meeting-info h2 {
+        font-size: 20px; /* Adjust heading size for mobile */
+    }
+
+    .meeting-info p {
+        font-size: 14px; /* Adjust paragraph size for mobile */
+        line-height: 1.6; /* Improve readability */
+    }
+
+    .meeting-image {
+        width: 100%; /* Full width for images */
+        margin-bottom: 20px; /* Space below the image */
+    }
+
+    .meeting-image img {
+        width: 100%; /* Ensure the image takes full width */
+        height: auto; /* Maintain aspect ratio */
+    }
+
+    .meeting-buttons {
+        display: flex;
+        flex-direction: column; /* Stack buttons vertically */
+        width: 100%; /* Full width buttons */
+        gap: 10px; /* Space between buttons */
+    }
+
+    .meeting-buttons button {
+        font-size: 16px; /* Adjust button text size */
+        padding: 10px 15px; /* Adjust button padding */
+        width: 100%; /* Ensure buttons take up full width */
+    }
 }
 
 /* Contact Section */
@@ -611,6 +840,61 @@ nav ul li a:hover {
 .contact-form button:active {
     transform: scale(0.98);
 }
+/* Mobile responsiveness for the Contact section */
+@media (max-width: 768px) {
+    .contact-section {
+        padding: 20px 15px; /* Adjust padding for smaller screens */
+    }
+
+    .contact-container {
+        flex-direction: column; /* Stack contact elements vertically */
+        align-items: center; /* Center content for mobile */
+        text-align: center; /* Center the text */
+    }
+
+    .contact-info {
+        width: 100%; /* Full width for text info */
+        margin-bottom: 20px; /* Space between contact info and form */
+    }
+
+    .contact-info h2 {
+        font-size: 22px; /* Adjust heading size */
+    }
+
+    .contact-info p {
+        font-size: 14px; /* Adjust paragraph font size */
+        line-height: 1.6; /* Increase line height for better readability */
+    }
+
+    .contact-form {
+        width: 100%; /* Full width for the form */
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        width: 100%; /* Ensure inputs and textarea take full width */
+        margin-bottom: 15px; /* Space between form fields */
+        padding: 10px; /* Add padding for better touch interaction */
+        font-size: 14px; /* Adjust font size for mobile */
+    }
+
+    .contact-form button {
+        width: 100%; /* Full-width button */
+        font-size: 16px; /* Adjust button text size */
+        padding: 12px 15px; /* Adjust padding for better mobile touch experience */
+    }
+
+    .contact-map {
+        width: 100%; /* Full width for map on mobile */
+        margin-bottom: 20px; /* Space below the map */
+    }
+
+    .contact-map iframe {
+        width: 100%; /* Ensure map iframe takes full width */
+        height: auto; /* Maintain aspect ratio */
+    }
+}
+
 
 /* Appointment Section */
 
@@ -686,37 +970,59 @@ nav ul li a:hover {
     margin: 0;
     font-size: 14px;
 }
-
+/* Mobile responsiveness for the footer */
 @media (max-width: 768px) {
-    body{
-        width:100%;
-    }
-    /* Stack services vertically for mobile devices */
-    .service-list {
-        flex-direction: column;
-        align-items: center;
-    }
-    .service {
-        width: 90%; /* Make services take most of the width */
-        margin-bottom: 20px;
+    .footer {
+        padding: 20px 15px; /* Adjust padding for smaller screens */
+        text-align: center; /* Center-align text for better readability */
     }
 
-    /* Adjust heading and text sizes for smaller screens */
-    .services h2 {
-        font-size: 24px;
-    }
-    .services .call {
-        font-size: 18px;
-    }
-    .services .description {
-        font-size: 14px;
+    .footer-logo {
+        margin-bottom: 15px; /* Space below the footer logo */
     }
 
-    .service-icon img {
-        width: 100%; /* Make the image responsive */
-        height: auto;
+    .footer-logo img {
+        max-width: 100px; /* Limit logo size */
+        height: auto; /* Maintain aspect ratio */
+    }
+
+    .footer-links {
+        display: flex; /* Use flexbox for alignment */
+        flex-direction: column; /* Stack links vertically */
+        align-items: center; /* Center links horizontally */
+        margin-bottom: 15px; /* Space below the links */
+    }
+
+    .footer-links a {
+        font-size: 14px; /* Adjust font size */
+        margin: 5px 0; /* Space between links */
+    }
+
+    .footer-social {
+        margin-bottom: 15px; /* Space below social media icons */
+    }
+
+    .footer-social a {
+        font-size: 20px; /* Adjust icon size */
+        margin: 0 10px; /* Space between icons */
+    }
+
+    .footer-contact {
+        font-size: 14px; /* Adjust font size for contact info */
+        line-height: 1.5; /* Increase line height for better readability */
+    }
+
+    .footer-contact address {
+        margin-bottom: 10px; /* Space below address */
+    }
+    
+    .footer-contact a {
+        display: block; /* Make links full-width for better touch experience */
+        margin-bottom: 5px; /* Space between contact links */
     }
 }
+
+
 
 
 
